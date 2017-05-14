@@ -3,8 +3,11 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english, ngerman]{babel} 
 \usepackage{tabu}
 \tabulinesep=1.2mm
+
+\usepackage{graphicx}
 
 % Mathematik
 \usepackage{amsmath}
@@ -86,6 +89,22 @@
 		Impuls & $p = mv$ \\
 		Energie & $W = Fs = \frac{1}{2} mv^2$
 	\end{tabu}
+			
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{img/darstellungKraefte.png}
+		\caption{Darstellung von Kräften}
+		\label{fig:darstellungkraefte}
+	\end{figure}
+		\begin{tabu} {l X}
+			2 Dimensional \\
+			$F_x = $ & $Fcos(\alpha)$ \\
+			$F_y = $ & $Fsin(\alpha)$ \\
+			3 Dimensional \\
+			$F_x = $ & $Fcos(\varphi)sin(\vartheta)$ \\
+			$F_y = $ & $Fsin(\varphi)sin(\vartheta)$ \\
+			$F_z = $ & $Fcos(\vartheta)$ \\
+		\end{tabu}
 
 \subsubsection{Potentielle Energie}
 
