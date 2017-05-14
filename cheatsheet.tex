@@ -7,13 +7,15 @@
 \usepackage{tabu}
 \tabulinesep=1.2mm
 
-\usepackage{graphicx}
-
 % Mathematik
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{enumitem}
+
+% Images
+\usepackage{graphicx}
+\graphicspath{{img/}} % default paths
  
 % Shortcuts
 \newcommand{\abl}[2]{\frac{\text{d}}{\text{d}#2}\text{ } #1 \text{ }\mathrm{d}t}
@@ -424,10 +426,19 @@ In einem geschlossenen System gelten immer die Hydrodynamischen Gesettze:
 	\item Hauptsatz: Die Entropie darf nicht abnehmen
 \end{enumerate}
 
-
 Wärme fliesst immer vom wärmeren zum kälteren Körper (durch Wärmeleitung, Konvektion und Wärmestrahlung). Vakum hat keine Wärmeleitung.
 
 
+\section{Temperaturen}
+
+\subsubsection{Wasser}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/wasser_aggregatszustaende}
+	\caption{Aggregatzustände von Wasser}
+	\label{fig:wasseraggregatszustaende}
+\end{figure}
 
 
 %-----------------------------------------------------------------------------
