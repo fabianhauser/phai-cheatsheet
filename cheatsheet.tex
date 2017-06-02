@@ -533,4 +533,223 @@ Zustandsgleichung: $\frac{pV}{T} = const.$
 $n$: Molzahl
 
 
+
+%-------
+
+
+\paragraph{Der erste Haptsatz der Thermodynamik:}
+
+Energierhaltung $dU = \delta Q + \delta W$
+
+\begin{description}
+	\item[$U$] Innere Energie
+	\item[$Q$] Wärme
+	\item[$W$] Arbeit
+\end{description}
+
+\paragraph{Zweiter Haptsatz:}
+
+Entropie kann nicht abnehmen.
+
+\subsection{Wärmekapazität}
+
+\[
+	\delta Q \sim dT
+\]
+
+\subsubsection{Beispiel Wärmekapazität}
+
+Wärmekapazität Wasser: $4.1868 kJ / kg K$
+
+Wie viel Energie brauchen wir um 1g Wasser um $1^\circ$ C aufzuwärmen?
+%TODO: Beispiel von Slide 19.
+\[
+SQ = 
+\]
+
+
+
+
+
+\subsubsection{Äquipartitionstheorem}
+
+Wärmekapazität = 0.5 x Anzahl Freiheitsgrade x N x $k_B$
+
+$C = \frac{f}{2}N k_B = \frac{f}{2} nR$
+
+$C_m = \frac{f}{2} R$
+
+$N$ Anzahl Atome
+
+
+Körper mit gleicher Molzahl haben die gleiche Wärmekapazität
+
+
+Bei kristalliner Festkörper:
+
+Hohe Temperaturen: $C_{mv} = 3R$
+
+Tiefe Temperaturen %TODO: Slide 24 Formel $C_{mv} = $
+
+\paragraph{Gase}
+
+Bei Gasen wird auch ein Teil der Aufwärm-Energie genutzt, um sich auszudehnen (falls möglich.)
+
+
+
+
+\subsubsection{Phasenübergänge: Thermodynamische Phasen}
+
+\begin{description}
+	\item[Fest] Form und Volumen bestimmt
+	\item[Flüssig] Bestimmtes Volumen
+	\item[Gasförmig] Weder Form noch Volumen bestimmt.
+	\item[(Plasma)] Ionisiertes Gas.
+\end{description}
+
+%TODO: Grafik seite 33
+
+\subsubsection{Latente Wärme}
+
+
+\[
+Q_f = C_v \Delta T
+\]
+
+
+Bei einem Phasenübergang wird sehr viel Wärme aufgenommen oder abgegeben:
+
+$ \frac{Q_s}{c_v}$
+
+%todo: Tabelle Seite 39
+
+
+
+\subsubsection{Dampfdruck}
+
+
+Der Dampfdruck stellt sich ein, wenn Wasser und Luft im Gleichgewicht sind.
+
+100\% Luftfeuchtigkeit bedeutet: $T = 20^\circ C \Rightarrow P_w = 23.4$ mbar Partialdruck
+
+
+\subsubsection{Taupunkt}
+
+Bei welcher Temperatur wäre die Luftfeuchtigkeit 100\%?
+
+
+\subsubsection{Wärmeleitung}
+Gesetz von Fourier: Nur Wärme, keine Masse
+
+\paragraph{Wärmestromdichte} $j_Q = - \lambda \frac{dT}{dx}$
+
+
+$[j_a] = \frac{W}{m^2}$
+
+
+$[j] = \frac{W}{m^2}$
+
+$[\lambda] = \frac{W}{m \cdot K}$
+
+\paragraph{Wärmeleitungsgleichung} %TODO: Slide 4
+
+\subsubsection{Wärmeübergang - Konvektion}
+Wärme + Masse
+
+Die Temperatur ändert sich sehr schnell in einer Grenzschicht. Dafür ist die Konvektion zuständig.
+
+$j = \alpha (T_w - T)$
+
+Wärmeübergangszahl $\alpha$
+
+\paragraph{Beispiel: Wärmeleitung in einem elektronischen Bauteil}
+%TODO: Slide 14
+
+
+
+
+\subsubsection{Strahlung}
+Stephan-Boltzmann
+
+
+Jeder Körper > 0 K verliert Energie in Form von elektromagnetischer Strahlung
+
+Die Strahlung ist proportional zu $T^4$ (Stefan-Boltzmann). Die Frequenzverteilung ist eine eindeutige Funktion der Temperatur (Planksches Strahlungsgesetz).
+
+\paragraph{Strahlungsformel von Plank}
+
+Planksche Konstante: $h = 6.626 \cdot 10^-43$
+
+\[
+	u(v,T)dv = \frac{hv}{e^{hv/k_BT} - 1} \frac{8\pi}{c^2} v^2 dv
+\]
+
+\begin{description}
+	\item[$u$] Energiedichte in $\frac{J}{m^3}$
+	\item[$v$] Frequenz
+	\item[$T$] Temperatur
+\end{description}
+
+Atome können nur endliche Quentaen aufnehmen: $e_v = hv$
+
+
+\paragraph{Elektromagnetische Strahlen}
+
+Können alle perfekt mit der Maxwell-Gleichung beschrieben werden
+
+
+Die Energie eines Photons: $E_{ph} = hv$. Bei Strahlung, welche Atome zerstören können, nennt man Ionisierende Strahlung.
+
+
+
+
+\paragraph{Stefan-Boltzmann Gesetz}
+
+Bei einer gewissen Temperatur, wie viel Energie geht mit der Fläche verloren.
+
+$\sigma_{SB}$ ist die Stefan-Boltzmann Konstante: $=5.67 \cdot 10^-8 \frac{W}{m^2 K^4}$
+
+Das totale Emissionsvermögen eines schwarzen Körpers ist:
+
+\[
+	K_s(T) = \sigma_{SB} T^4
+\]
+
+z.B: Wie warm wird eine Herdplatte: $P = \sigma_{SB} \cdot T^4 \cdot A$
+
+ 
+\subsubsection{Entropie}
+
+In einem geschlossenen System, bei dem das Volumen des Gases grösser wird, ändert sich der Druck. Die Temperatur ändert sich nicht.
+
+$pV = nRT$ bei einem Idealen Gas
+
+$U = \frac{3}{2} nRT$
+
+
+\paragraph{Eigenschaften der Entropie}
+
+Wärmezufuhr / Temperatur:
+\[
+	dS = \frac{dQ}{T}
+\]
+
+\subsubsection{Hauptsätze der Thermodynamik}
+
+\begin{enumerate}
+	\item Energierhaltung
+	\item In einem geschlossenen System kann die Entropie nie abnehmen.
+\end{enumerate}
+
+
+\subsubsection{Wirkungsgrad}
+
+Carnot-Wirkungsgrad:
+
+\[
+	\eta = 1 - \frac{T_L}{T_H}
+\]
+
+
+
 \end{document}
