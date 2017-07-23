@@ -147,7 +147,7 @@ Stoffmenge.
 	\end{tabu}
 \paragraph{3 Dimensionen} \hfill \\
 	\begin{multicols}{2}
-		\includegraphics[width=0.8\linewidth]{img/darstellungKraefte.png}
+		\includegraphics[width=\linewidth]{img/darstellungKraefte.png}
 		
 		\begin{tabu} {l X}
 			$\vec{r}(t) =$ & $ \left[ x(t),y(t),z(t)\right]$ \\
@@ -190,27 +190,82 @@ Stoffmenge.
 	\end{multicols}
 
 \subsection{Haft- und Gleitreibung}
-	Ist unabhängig von der Fläche.
+	Ist immer unabhängig von der Fläche.
 	
-	%TODO: Schiefe Ebene
+	\includegraphics[width=\linewidth]{img/reibung}
 	
+	\begin{tabu}{l X}
+		Maximale Haftreibung & $F = F_{R,max} = \mu_H F_N$\\
+		Gleitreibung & $F = \mu_G F_N$
+	\end{tabu}
 	
-	\paragraph{Gleichgewicht eines starren Körpers an der Ebene}
-	$F_{tot} = \sum{F_i} = 0$
-	%TODO: Slide 26 Vorlesung
+\subsubsection{Schiefe Ebene}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/reibung_schiefe_ebene.jpg}
+		
+		\begin{align*}
+			F_N &= m_1 g \cos 30^\circ \\
+			m_1 &g \sin 30^\circ - m_2 g \pm \mu_Hm_1g \cos 30^\circ = 0
+		\end{align*}
+	\end{multicols}
 
+\subsubsection{Beispiel für zwei Dimensionen}
+	\begin{multicols}{2}
+		\includegraphics[width=0.5\linewidth]{img/massenpunkt}
+		
+		\begin{tabu}{l X}
+			X: & $F_1 \cos \alpha - F_2 \cos \beta - F_3 \sin \gamma = 0$\\
+			Y: & $-F_1 \sin \alpha - F_2 \sin \beta + F_3 \cos \gamma = 0$
+		\end{tabu}
+	\end{multicols}
 
 \subsection{Drehmoment}
-	Drehmoment wird in $t^{-1}$, meist $\text{s}^{-1}$ oder $\text{min}^{-1}$ angegeben.
+	\begin{multicols}{2}
+		\includegraphics[width=0.9\linewidth]{img/drehmoment}
+		
+		\begin{align*}
+			M &= r \times \vec{F} \\
+			\left| M \right| &= \left| r \right| \left| \vec{F} \right| \sin \varphi
+		\end{align*}
+		
+		Der Drehmoment wird in $t^{-1}$, meist $\text{s}^{-1}$ oder $\text{min}^{-1}$ angegeben.
+	\end{multicols}
 	
-	Die Hebelkraft funktioniert dank dem Drehmoment.
+\subsubsection{Hebelkraft}
+
+	\begin{multicols}{2}[Hebelkraft funktioniert dank dem Drehmoment.]
+		\includegraphics[width=\linewidth]{img/hebelkraft}
+		Gegeben: $\alpha$ und $mg$. Gesucht: $F$.
+		
+		\begin{tabu}{l X}
+			X: & $F \cos \alpha - F_x = 0$\\
+			Y: & $F \sin \alpha + F_y - mg = 0$\\
+			M$_z$ & $F \sin \alpha \cdot L - mg \frac{L}{2} = 0$
+		\end{tabu}
+		Daraus folgt: $F = \frac{mg}{2 \sin \alpha}$
+	\end{multicols}
+
+
+\subsection{Gleichgewicht eines starren Körpers an der Ebene}	
+Die Summe der Kräfte muss gleich 0 sein, und mittels Vektoraddition anhand eines Referenzpunktes ausgerechnet werden:
+
+\[
+F_{tot} = \sum_n{F_n} =\sum_n{F_{x,n}} = \sum_n{F_{y,n}} = \sum_n{F_{z,n}} = 0
+\]
+%TODO: Slide 26 Vorlesung
+
+\subsubsection{Schwerpunkt}
+	Wird der Körper am Schwerpunkt aufgehängt, ist er im Gleichgewicht, d.h., Drehmoment = 0. Die Schwerkraft kann durch eine Kraft im Schwerpunkt ersetzt werden:
+	\[
+		r_p \sum_i{m_i} = \sum_i{m_ir_i} %TODO: Versteh ich nicht. Was ist hier r und m?
+	\]
 
 \subsection{Winkelgeschwindigkeit und Radialbeschleunigung}
 
 	\begin{tabu} {l X}
 		Periode & $T = \left[ \frac{\text{Umdrehungen}}{s}\right]$ \\ %TODO: Stimmt das?
 		Frequenz & $f = T^{-1}$ \\
-		Winkelgeschwindigkeit & $\vec{\omega} =\frac{v}{r} = \left[ \frac{rad}{s} \right] = 2\pi f$ \\
+		Winkelgeschwindigkeit & $\vec{\omega} =\frac{\omega}{r} = \left[ \frac{rad}{s} \right] = 2\pi f$ \\
 		Drehgeschwindigkeit & $v = \omega r$ \\
 		Winkelbeschleunigung & $\alpha$ \\ %TODO: Definition?
 		Tangential- und & $\vec{a}(t) = \vec{a}_t(t) + \vec{a}_r(t)$ \\
