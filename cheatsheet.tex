@@ -41,6 +41,14 @@ zusammen: $G = {G}[G]$
 Dimensionen: Masse, Länge, Zeit, Temperatur, Stromstärke, Lichtstärke,
 Stoffmenge.
 
+\subsection{Mathematik}
+\subsubsection{Trigonometrie}
+	\begin{align*}
+		\sin(\alpha) &= \frac{\text{Gegenkathete}}{\text{Hypotenuse}} \\
+		\cos(\alpha) &= \frac{\text{Ankathete}}{\text{Hypotenuse}} \\
+		\tan(\alpha) &=  \frac{\text{Gegenkathete}}{\text{Ankathete}} = \frac{\sin(\alpha)}{\cos(\alpha)}
+	\end{align*}
+
 \section{Kinematik}
 	\begin{tabu} {l X}
 		\hline
@@ -65,20 +73,14 @@ Stoffmenge.
 		&	$\bar{a} = \frac{\Delta v}{\Delta t}$ 
 		\\ \hline
 	\end{tabu}
-	
-	\begin{figure}[h!]
-		\includegraphics[width=0.7\linewidth]{img/kinematik1}
-		\caption{}
-		\label{fig:kinematik1}
-	\end{figure}
 
-\subsection{v-t Diagramme}
-	
-	\begin{figure}[h!]
-		\includegraphics[width=0.4\linewidth]{img/v-t_diagram}
-		\caption{}
-		\label{fig:v-tdiagram}
-	\end{figure}
+	\begin{multicols}{2}
+		\subsection{x-t Diagramme}
+		\includegraphics[width=0.9\linewidth]{img/kinematik1}
+		
+		\subsection{v-t Diagramme}
+		\includegraphics[width=0.9\linewidth]{img/v-t_diagram}
+	\end{multicols}
 
 
 
@@ -115,28 +117,6 @@ Stoffmenge.
 		Impuls & $p = mv$ \\
 		Energie & $W = Fs = \frac{1}{2} mv^2$
 	\end{tabu}
-			
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.3\linewidth]{img/darstellungKraefte.png}
-		\caption{Darstellung von Kräften}
-		\label{fig:darstellungkraefte}
-	\end{figure}
-		\begin{tabu} {l X}
-			\multicolumn{2}{l}{2 Dimensional} \\
-			$F_x = $ & $Fcos(\alpha)$ \\
-			$F_y = $ & $Fsin(\alpha)$ \\
-			\multicolumn{2}{l}{3 Dimensional} \\
-			$F_x = $ & $Fcos(\varphi)sin(\vartheta)$ \\
-			$F_y = $ & $Fsin(\varphi)sin(\vartheta)$ \\
-			$F_z = $ & $Fcos(\vartheta)$
-		\end{tabu}
-			\begin{tabu} {l X}
-				\multicolumn{2}{l}{Berechnung trigonometrische Funktionen} \\
-				$sin(\alpha) = $ & $\frac{Gegenkathete}{Hypotenuse}$ \\
-				$cos(\alpha) = $ & $\frac{Ankathete}{Hypotenuse}$ \\
-				$tan(\alpha) = $ & $\frac{Gegenkathete}{Ankathete}$ = $\frac{sin(\alpha)}{cos(\alpha)}$
-			\end{tabu}
 
 \subsubsection{Potentielle Energie}
 	
@@ -157,6 +137,26 @@ Stoffmenge.
 		Kraft & $F = kx$ \\ %TODO: Was ist $x$?
 		Energie & $	W = \frac{1}{2} k x^2$
 	\end{tabu}
+
+
+\subsection{Mehrdimensionale Kräfte}
+\paragraph{2 Dimensionen} \hfill \\
+	\begin{tabu} {l X}
+		$F_x = $ & $F\cos(\alpha)$ \\
+		$F_y = $ & $F\sin(\alpha)$ \\
+	\end{tabu}
+\paragraph{3 Dimensionen} \hfill \\
+	\begin{multicols}{2}
+		\includegraphics[width=0.8\linewidth]{img/darstellungKraefte.png}
+		
+		\begin{tabu} {l X}
+			$\vec{r}(t) =$ & $ \left[ x(t),y(t),z(t)\right]$ \\
+			$\vec{v}(t) =$ & $\frac{\text{d}\vec{r}}{\text{d}t}$ \\
+			$F_x = $ & $F\cos(\varphi)\sin(\vartheta)$ \\
+			$F_y = $ & $F\sin(\varphi)\sin(\vartheta)$ \\
+			$F_z = $ & $F\cos(\vartheta)$
+		\end{tabu}
+	\end{multicols}
 
 \subsection{Würfe}
 \subsubsection{Senkrechter Wurf}
@@ -206,9 +206,19 @@ Stoffmenge.
 	Die Hebelkraft funktioniert dank dem Drehmoment.
 
 \subsection{Winkelgeschwindigkeit und Radialbeschleunigung}
-	Die Winkelgeschwindigkeit wird in $\omega = \frac{v}{r}\left[ \frac{rad}{s} \right]$ angegeben
+
+	\begin{tabu} {l X}
+		Periode & $T = \left[ \frac{\text{Umdrehungen}}{s}\right]$ \\ %TODO: Stimmt das?
+		Frequenz & $f = T^{-1}$ \\
+		Winkelgeschwindigkeit & $\vec{\omega} =\frac{v}{r} = \left[ \frac{rad}{s} \right] = 2\pi f$ \\
+		Drehgeschwindigkeit & $v = \omega r$ \\
+		Winkelbeschleunigung & $\alpha$ \\ %TODO: Definition?
+		Tangential- und & $\vec{a}(t) = \vec{a}_t(t) + \vec{a}_r(t)$ \\
+		Radialbeschleunigung & $a_r = \frac{v^2}{r} = \omega^2 r$
+	\end{tabu}
 	
-	Winkelbeschleunigung wird mit mit $\alpha$ angegeben.
+
+	Die Winkelgeschwindigkeit wird in $\omega = \frac{v}{r}\left[ \frac{rad}{s} \right]$ angegeben
 	
 	Die Radialbeschleunigung zeigt nach innen zum Kreismittelpunkt
 	
