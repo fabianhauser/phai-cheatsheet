@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, ngerman]{babel} 
 \usepackage{tabu}
+\usepackage{multicol}
 \tabulinesep=1.2mm
 
 % Mathematik
@@ -28,26 +29,33 @@
 
 \maketitle
 
-\begin{abstract}
-	Dieses Dokument gibt einen Überblick über die PhAI-Vorlesung FS2017
-\end{abstract}
-
 %TODO: Ableitungsregeln, Cos/Sin etc.
+
+\section{Einführung}
+
+\subsection{Physikalische Grössen}
+
+Physikalische Grössen setzen sich aus einem Zahlenwert und einer physikalischen Einheit
+zusammen: $G = {G}[G]$
+
+Dimensionen: Masse, Länge, Zeit, Temperatur, Stromstärke, Lichtstärke,
+Stoffmenge.
 
 \section{Kinematik}
 	\begin{tabu} {l X}
 		\hline
 		Gleichförmige Bewegung
-		&	$s(t) = v \cdot t + s_0$ 
+		&	$x(t) = v \cdot t + x_0$
 		\\
 		&	$\vec{v}$ (Konstant)
 		\\ \hline
-		Gleichmässig beschleunigte
-		&	$s(t) = \frac{1}{2} a \cdot t^2 + v_0 \cdot t + s_0$
+		Gleichmässig
+		&	$x(t) = \frac{1}{2} a \cdot t^2 + v_0 \cdot t + x_0$
 		\\
-		Bewegung
+		beschleunigte
 		&	$\vec{v}(t) = \vec{a} \cdot t + \vec{v}_0$
 		\\
+		Bewegung
 		&	$\vec{a}$ (Konstant)
 		\\ \hline
 		Mittlere Geschwindigkeit
@@ -57,6 +65,22 @@
 		&	$\bar{a} = \frac{\Delta v}{\Delta t}$ 
 		\\ \hline
 	\end{tabu}
+	
+	\begin{figure}[h!]
+		\includegraphics[width=0.7\linewidth]{img/kinematik1}
+		\caption{}
+		\label{fig:kinematik1}
+	\end{figure}
+
+\subsection{v-t Diagramme}
+	
+	\begin{figure}[h!]
+		\includegraphics[width=0.4\linewidth]{img/v-t_diagram}
+		\caption{}
+		\label{fig:v-tdiagram}
+	\end{figure}
+
+
 
 \section{Kinetik}
 	\begin{tabu} {l X l}
@@ -115,15 +139,15 @@
 			\end{tabu}
 
 \subsubsection{Potentielle Energie}
-
-\begin{tabu} {l X}
-	Kraft & $F = mg = \frac{p}{t}$ \\
-	Höhe & $h = \left[ m \right]$ \\
-	Geschwindigkeit & $v = gt$ \\
-	Beschleunigung & $g \approx 9.81 \frac{m}{s^2}$ \\
-	Impuls & $p = mv$ \\
-	Energie & $W = Fh = mgh$
-\end{tabu}
+	
+	\begin{tabu} {l X}
+		Kraft & $F = mg = \frac{p}{t}$ \\
+		Höhe & $h = \left[ m \right]$ \\
+		Geschwindigkeit & $v = gt$ \\
+		Beschleunigung & $g \approx 9.81 \frac{m}{s^2}$ \\
+		Impuls & $p = mv$ \\
+		Energie & $W = Fh = mgh$
+	\end{tabu}
 
 \subsubsection{Federkraft}
 
@@ -133,11 +157,37 @@
 		Kraft & $F = kx$ \\ %TODO: Was ist $x$?
 		Energie & $	W = \frac{1}{2} k x^2$
 	\end{tabu}
-	
 
-\subsection{Schiefer Wurf}
-	%TODO: Schiefer Wurf
-	%SW02 Slide 34
+\subsection{Würfe}
+\subsubsection{Senkrechter Wurf}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/wurf_senkrecht}
+		\begin{tabu} {l X}
+			Maximale Wurfhöhe & $h = \frac{v^2_0}{2g}$
+		\end{tabu}
+	\end{multicols}
+
+\subsubsection{Horizontaler Wurf}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/wurf_horizontal}
+		
+		\begin{tabu} {l X}
+			Strecke & $x = v_0 t$ \\
+			Zeit & $t = \frac{x}{v_0}$ \\
+			Höhe & $y = - \frac{g}{2}t^2 = - \frac{g}{2v^2_0} x^2$
+		\end{tabu}
+	\end{multicols}
+
+\subsubsection{Schiefer Wurf}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/wurf_schief}
+
+		\begin{tabu} {l X}
+			Höhe & $y(x) = x \tan \varphi - \frac{g x^2}{2 v^2_0 \cos^2 \varphi}$ \\
+			Max. h. & $y_{max} = \frac{v^2_0 \sin^2 \varphi}{2g}$ \\
+			Wurfweite & $d = \frac{v^2_0 \sin(2\varphi)}{g}$
+		\end{tabu}
+	\end{multicols}
 
 \subsection{Haft- und Gleitreibung}
 	Ist unabhängig von der Fläche.
