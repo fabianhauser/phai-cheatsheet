@@ -19,7 +19,7 @@
 \graphicspath{{img/}} % default paths
  
 % Shortcuts
-\newcommand{\abl}[2]{\frac{\text{d}}{\text{d}#2}\text{ } #1 \text{ }\mathrm{d}t}
+\newcommand{\abl}[2]{\frac{\text{d}}{\text{d}#2}\text{ } #1 \text{ }}
  
 %opening
 \title{PhAI Cheatsheet Draft}
@@ -29,7 +29,7 @@
 
 \maketitle
 
-%TODO: Ableitungsregeln, Cos/Sin etc.
+%TODO: Ableitungsregeln.
 
 \section{Einführung}
 
@@ -88,66 +88,70 @@ Stoffmenge.
 	\begin{tabu} {l X l}
 		\hline
 		Impuls
-		&	$\vec{p} = \left[ Ns \right] = \left[ \frac{kg \cdot m}{s} \right]$	%TODO: Impuls m \cdot v?
+		&	$\vec{p} = mv = \left[ Ns \right] = \left[ \frac{kg \cdot m}{s} \right]$
 		& 
 		\\ \hline
 		Kraft
-		&	$\vec{F}=m\vec{a} = \left[ N \right] = \left[ \frac{kg \cdot m}{s^2} \right] = \abl{\vec{p}}{t}$ (Newtonscher Impulssatz) %TODO: RLY?
+		&	$\vec{F}= m\vec{a} = \abl{\vec{p}}{t} = \left[ N \right] = \left[ \frac{kg \cdot m}{s^2} \right]$
 		&	Newton
 		\\ \hline
 		Energie
-		&	$W = \left[ J \right] = \left[ N m \right] = \left[ Ws \right] = \left[ \frac{kg \cdot m^2}{s^2} \right]$
+		&	$W = F s \left[ J \right] = \left[ N m \right] = \left[ Ws \right] = \left[ \frac{kg \cdot m^2}{s^2} \right]$
 		&	Joule
 		\\
+		Arbeit
 		&	$1 \left[kWh\right] = 3.6 \cdot 10^6 \left[ J \right]$
 		&
 		\\ \hline
 		Leistung
-		&	$P = \left[ W \right] = \left[ \frac{J}{s} \right] = \left[ \frac{kg \cdot m^2}{s^3} \right]$
+		&	$P = \abl{W}{t} = \left[ W \right] = \left[ \frac{J}{s} \right] = \left[ \frac{kg \cdot m^2}{s^3} \right] = Fv$ (bei Translation)
 		&	Watt
 		\\ \hline
 	\end{tabu}
 	
 \subsubsection{Kinetische Energie}
 	\begin{tabu} {l X}
-		Kraft & $F = ma = \frac{p}{t}$ \\
-		Strecke & $s = \frac{1}{2} a t^2$ \\
-		Geschwindigkeit & $v = at$ \\
-		Beschleunigung & $a$\\
-		Impuls & $p = mv$ \\
-		Energie & $W = Fs = \frac{1}{2} mv^2$
+		Kraft & $\vec{F} = m\vec{a} = \frac{\vec{p}}{t}$ \\
+		Strecke & $s = \frac{1}{2} a t^2 + \vec{v}_0 \cdot t + s_0$ \\
+		Geschwindigkeit & $\vec{v} = \vec{a}t + \vec{v}_0$ \\
+		Beschleunigung & $\vec{a}$\\
+		Impuls & $\vec{p} = m\vec{v}$ \\
+		Energie & $W = E_{kin} Fs = \frac{1}{2} mv^2$
 	\end{tabu}
 
 \subsubsection{Potentielle Energie}
 	
 	\begin{tabu} {l X}
-		Kraft & $F = mg = \frac{p}{t}$ \\
+		Kraft & $\vec{F} = m\vec{g} = \frac{\vec{p}}{t}$ \\
 		Höhe & $h = \left[ m \right]$ \\
-		Geschwindigkeit & $v = gt$ \\
-		Beschleunigung & $g \approx 9.81 \frac{m}{s^2}$ \\
-		Impuls & $p = mv$ \\
-		Energie & $W = Fh = mgh$
+		Geschwindigkeit & $\vec{v} = \vec{g}t$ \\
+		Beschleunigung & $\vec{g} \approx 9.81 \frac{m}{s^2}$ \\
+		Impuls & $\vec{p} = m\vec{v}$ \\
+		Energie & $W = E_{pot} = Fh = mgh$
 	\end{tabu}
 
 \subsubsection{Federkraft}
-
 	
 	\begin{tabu} {l X}
 		Federkonstante & $k = \left[ \frac{N}{m} \right] = \left[ \frac{kg}{s^2} \right]$ \\
-		Kraft & $F = kx$ \\ %TODO: Was ist $x$?
-		Energie & $	W = \frac{1}{2} k x^2$
+		Kraft & $F = kx$ \\ %TODO: Was ist $x$? Stimt das? Siehe vier Zeilen weiter.
+		Energie & $	W = E_f = \frac{1}{2} k x^2$
 	\end{tabu}
 
+	Die Ausdehnung von Federn ist proportional zur Kraft: $F = -k(x -x_0)$ %TODO: Stimmt diese Formel?
 
 \subsection{Mehrdimensionale Kräfte}
-\paragraph{2 Dimensionen} \hfill \\
+\paragraph{Zweite Dimension} \hfill \\
 	\begin{tabu} {l X}
 		$F_x = $ & $F\cos(\alpha)$ \\
 		$F_y = $ & $F\sin(\alpha)$ \\
 	\end{tabu}
-\paragraph{3 Dimensionen} \hfill \\
+
+\pagebreak
+
+\paragraph{Dritte Dimension} \hfill \\
 	\begin{multicols}{2}
-		\includegraphics[width=\linewidth]{img/darstellungKraefte.png}
+		\includegraphics[width=0.6\linewidth]{img/darstellungKraefte.png}
 		
 		\begin{tabu} {l X}
 			$\vec{r}(t) =$ & $ \left[ x(t),y(t),z(t)\right]$ \\
@@ -162,6 +166,7 @@ Stoffmenge.
 \subsubsection{Senkrechter Wurf}
 	\begin{multicols}{2}
 		\includegraphics[width=\linewidth]{img/wurf_senkrecht}
+		
 		\begin{tabu} {l X}
 			Maximale Wurfhöhe & $h = \frac{v^2_0}{2g}$
 		\end{tabu}
@@ -219,20 +224,107 @@ Stoffmenge.
 		\end{tabu}
 	\end{multicols}
 
-\subsection{Drehmoment}
+
+\subsection{Gleichgewicht eines starren Körpers an der Ebene}	
+	Die Summe der Kräfte muss gleich 0 sein, und mittels Vektoraddition anhand eines Referenzpunktes ausgerechnet werden:
+	
+	\[
+	\vec{F}_{tot} = \vec{M}_{tot} = \sum_n{\vec{F}_n} =\sum_n{\vec{F}_{x,n}} = \sum_n{\vec{F}_{y,n}} = \sum_n{\vec{F}_{z,n}} = 0
+	\]
+
+%TODO: Slide 26 Vorlesung
+
+\subsubsection{Schwerpunkt}
+	Wird der Körper am Schwerpunkt aufgehängt, ist er im Gleichgewicht, d.h., Drehmoment = 0. Die Schwerkraft kann durch eine Kraft im Schwerpunkt ersetzt werden:
+	\[
+		r_p \sum_i{m_i} = \sum_i{m_ir_i} %TODO: Versteh ich nicht. Was ist hier r und m?
+	\]
+
+\pagebreak
+
+\subsection{Dynamik}
+	\begin{multicols}{2}
+		\begin{align*}
+		Ma &= Mg - F_s \\
+		ma &=F_s - mg
+		\end{align*}
+		
+		Daraus folgt: $(m + M)a = g(M - m)$
+		
+		\includegraphics[width=0.3\linewidth]{img/dynamik}
+	\end{multicols}
+
+\subsection{Arbeit und Energie}
+\subsubsection{Beispiel Bungee Jumping}
+	\begin{multicols}{2}
+		Kehrpunktgeschwindigkeit = 0
+		\begin{align*}
+			mg(L + d) = \frac{k}{2} d^2 + \frac{m}{2} v^2\\
+			d^2 - \frac{2mg}{k}d - \frac{2mg}{k}L = 0\\
+			d = \frac{mg}{k} + \sqrt{\frac{2mg}{k} + \left(\frac{mg}{k}\right)^2}
+		\end{align*}
+		
+
+		
+		\includegraphics[width=0.25\linewidth]{img/bungee}
+	\end{multicols}
+
+\subsection{Leistung}
+	\begin{tabu}{l X}
+		Wirkungsgrad & $\eta = \frac{P_\text{nutzbar}}{P_\text{zugeführt}} < 1$
+	\end{tabu}
+
+\subsection{Rotation}
+	\begin{tabu} {l X}
+		Periode
+		& $T = \left[ s \right]$ (Zeit einer Umdrehung) \\
+		Frequenz
+		& $f = T^{-1} = \left[ s^{-1} \right]$ \\
+		Winkelgeschwindigkeit
+		& $\vec{\omega} = 2\pi f = \frac{2\pi}{T} = \left[ \frac{rad}{s} \right]$ \\
+		Winkelbeschleunigung
+		& $\vec{\alpha} = \abl{\vec{\omega}}{t} = \left[ \frac{rad}{s^2} \right]$ \\
+		Rotationsgeschwindigkeit
+		& $v = \omega r = \frac{2\pi r}{T} = \left[ \frac{m}{s} \right]$ \\
+%TODO: Was ist die Tangentialbeschleundigung? Stimmt die Formel?
+%		Tangential- und 
+%		& $\vec{a}(t) = \vec{a}_t(t) + \vec{a}_r(t)$ \\
+		Radialbeschleunigung
+		& $a_r = \omega^2 r = \frac{v^2}{r} = \left[ \frac{m}{s^2} \right]$ \\
+		Rotationsenergie
+		& $W = E_{rot} = \frac{1}{2} J \omega^2 = \left[ J \right]$ \\
+		Rotationsleistung
+		& $P = \vec{M} \cdot \vec{\omega} = \left[ \frac{J}{s} \right]$ \\
+		Drehimpuls
+		& $\vec{L} = J \vec{\omega} = \left[ \frac{kg \cdot m^2}{s} \right]$ \\
+		Drehmoment / Kraft
+		& $\vec{M} = \vec{r} \times \vec{F} = \abl{\vec{L}}{t} = \left[ Nm \right]$ (siehe \ref{sec:drehmoment} Drehmoment) \\
+		Massenträgheitsmoment
+		& $J = \sum_i{m_i r_i^2} = \left[kg \cdot m^2 \right]$
+	\end{tabu}
+
+\subsubsection{Radialbeschleunigung}
+	Die Radialbeschleunigung zeigt nach innen zum Kreismittelpunkt
+
+\subsubsection{Rotationsenergie}
+
+	%TODO: Slide 3, Freitag 21.04.
+
+
+\subsubsection{Drehmoment}\label{sec:drehmoment}
 	\begin{multicols}{2}
 		\includegraphics[width=0.9\linewidth]{img/drehmoment}
 		
 		\begin{align*}
-			M &= r \times \vec{F} \\
-			\left| M \right| &= \left| r \right| \left| \vec{F} \right| \sin \varphi
+		M &= a \cdot F \\
+		\vec{M} &= \vec{r} \times \vec{F} \\
+		\left| \vec{M} \right| &= \left| \vec{r} \right| \left| \vec{F} \right| \sin \varphi
 		\end{align*}
 		
 		Der Drehmoment wird in $t^{-1}$, meist $\text{s}^{-1}$ oder $\text{min}^{-1}$ angegeben.
 	\end{multicols}
-	
-\subsubsection{Hebelkraft}
 
+\subsubsection{Hebelkraft}
 	\begin{multicols}{2}[Hebelkraft funktioniert dank dem Drehmoment.]
 		\includegraphics[width=\linewidth]{img/hebelkraft}
 		Gegeben: $\alpha$ und $mg$. Gesucht: $F$.
@@ -245,78 +337,34 @@ Stoffmenge.
 		Daraus folgt: $F = \frac{mg}{2 \sin \alpha}$
 	\end{multicols}
 
+\subsection{Impuls}
 
-\subsection{Gleichgewicht eines starren Körpers an der Ebene}	
-Die Summe der Kräfte muss gleich 0 sein, und mittels Vektoraddition anhand eines Referenzpunktes ausgerechnet werden:
-
-\[
-F_{tot} = \sum_n{F_n} =\sum_n{F_{x,n}} = \sum_n{F_{y,n}} = \sum_n{F_{z,n}} = 0
-\]
-%TODO: Slide 26 Vorlesung
-
-\subsubsection{Schwerpunkt}
-	Wird der Körper am Schwerpunkt aufgehängt, ist er im Gleichgewicht, d.h., Drehmoment = 0. Die Schwerkraft kann durch eine Kraft im Schwerpunkt ersetzt werden:
-	\[
-		r_p \sum_i{m_i} = \sum_i{m_ir_i} %TODO: Versteh ich nicht. Was ist hier r und m?
-	\]
-
-\subsection{Winkelgeschwindigkeit und Radialbeschleunigung}
-
-	\begin{tabu} {l X}
-		Periode & $T = \left[ \frac{\text{Umdrehungen}}{s}\right]$ \\ %TODO: Stimmt das?
-		Frequenz & $f = T^{-1}$ \\
-		Winkelgeschwindigkeit & $\vec{\omega} =\frac{\omega}{r} = \left[ \frac{rad}{s} \right] = 2\pi f$ \\
-		Drehgeschwindigkeit & $v = \omega r$ \\
-		Winkelbeschleunigung & $\alpha$ \\ %TODO: Definition?
-		Tangential- und & $\vec{a}(t) = \vec{a}_t(t) + \vec{a}_r(t)$ \\
-		Radialbeschleunigung & $a_r = \frac{v^2}{r} = \omega^2 r$
-	\end{tabu}
+Impulserhaltung: In einem geschlossenen System ohne externe Einflüsse ist der Impuls 0. Wenn nur Kräfte zwischen zwei Körpern wirken (Kraft=Gegenkraft), bleibt der Impuls erhalten
 	
-
-	Die Winkelgeschwindigkeit wird in $\omega = \frac{v}{r}\left[ \frac{rad}{s} \right]$ angegeben
-	
-	Die Radialbeschleunigung zeigt nach innen zum Kreismittelpunkt
-	
-	Berechnung: $a_r = \omega^2 r = \frac{v^2}{r} = \left[ \frac{rad}{s^2} \right]$
-
-\subsubsection{Rotationsenergie}
-
-	Rotationsenergie: $W = E_{rot} = \frac{1}{2} J \omega^2$
-	%TODO: Slide 3, Freitag 21.04.
-	
-\subsubsection{Impuls}
-
-Impulserhaltung: In einem geschlossenen System ohne externe einflüsse ist der Impuls 0. 
-	
-\subsubsection{Drehimpuls} %TODO: Übersichtlicher in Tabelle?
+\subsubsection{Drehimpuls}
 	Der Drehimpuls $L$ ist parallel zur Drehachse. Um diesen zu ändern, braucht es einen Drehmoment.
 
-	$L = \sum_i{r_i \times p_i} = \sum_i{r_i \times mv_i}$
-	$\left[ L \right] = kg m^2 s^{-2}$
+	\[
+	%TODO: Stimmt der hintere Teil oder nicht?
+	L = J \omega %= \sum_i{r_i \times p_i} = \sum_i{r_i \times mv_i} = \left[ \frac{kg \cdot m^2}{s^2} \right]
+	\]
 	
-	$\frac{dL}{dt} = M \Rightarrow \frac{d\overline{p}}{dt} = \overline{F}$
+	Dynamisches Gesetz der Rotation:
+	$\abl{L}{t} = M$
 	
+	 Wenn keine externe Momente wirken, bleibt der Gesamtdrehimpuls konstant.
 	%TODO: Screenshot Slide 8
-
-
-	\paragraph{Drehimpulserhaltung}
-	
-	Die Energie aus einem Drehimpuls muss erhalten bleiben.
-	
 	
 	\paragraph{Drehimpuls auf der schiefen Ebene} \hfill \\
 	
-	Runde Zylinder, welche eine schiefe Ebene hinunterrollen: $mgh = E_{kin} + E_{rot} =\frac{m}{2} v^2 + \frac{J}{2} \omega^2$
+	Runde Zylinder, welche eine schiefe Ebene hinunter rollen: $mgh = E_{kin} + E_{rot} =\frac{m}{2} v^2 + \frac{J}{2} \omega^2$
 	
 	Je weiter die Masse von der Drehachse weg ist, desto träger ist die Drehung.
-	
 
 \subsection{Masse und Trägheit}
 	Das Gewicht eines Körpers ist von der Masse abhängig: $F = mg$.
 	Masse ist für eine Trägheit und Gravitation zuständig. Achtung: Gewicht $\neq$ Masse!
 	%TODO: Erweitern Masse und Trägheit
-
-
 
 \subsubsection{Trägheitsmoment}
 
@@ -326,30 +374,50 @@ Impulserhaltung: In einem geschlossenen System ohne externe einflüsse ist der I
 	
 	$J = \int r^2 d m = \left[ kg \cdot m^2 \right]$
 
-\subsection{Elastischer Stoss}
-	Sowohl Impuls als auch Energie bleibt erhalten; dank beiden Gleichungen kann eine eindeutige Lösung errechnet werden.
+\subsection{Stösse}
 	
-	Schwerpunktgeschwindigkeit: $u = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$ %TODO: Slide 08ff
+	Geschwindigkeit des Schwerpunktes:
+	\begin{align*}
+		 u &= \frac{m_1v_1 + m_2v_2}{m_1 + m_2}
+	\end{align*}
+	
+	Vor dem Stoss:
+	\begin{align*}
+		v_1 &= u + (v_1 - u) = u + v_1^{rel} \\
+		v_2 &= u + (v_2 - u) = u + v_2^{rel}
+	\end{align*}
+	
+	Kinetische Energie:
+	\begin{align*}
+		E_{kin} &= \frac{m_1 + m_2}{2}u^2 + \frac{m_1}{2}(v_1 - u)^2 + \frac{m_2}{2}(v_2 - u)^2
+	\end{align*}
+	
+\subsubsection{Elastischer Stoss}
+	Sowohl Impuls als auch Kinetische Energie bleibt erhalten.
+	
+	Nach dem Stoss:
+	\begin{align*}
+	v_1 &= u - (v_1 - u) = u - v_1^{rel} \\
+	v_2 &= u - (v_2 - u) = u - v_2^{rel}
+	\end{align*}
 
+\subsubsection{Inelastischer Stoss}
+	Nach dem Stoss: $v_1 = v_2 = u$
 
-\subsection{Inelastischer Stoss}
-
-	$m_1 v_1 + m_2 v_2 = (m_1 + m_2) u \Rightarrow u = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$
+	Kinetische Energie:
+	\begin{align*}
+		E_{kin} &= m_1 v_1 + m_2 v_2 = (m_1 + m_2) u \Rightarrow u = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}
+	\end{align*}
 
 \subsubsection{Verlorene Kinetische Energie}
-
-	Die verlorene kinetische Energie wird als $Q = E_{kin}  - E'_{kin}$
+	\begin{align*}
+		Q &= E_{kin}  - E'_{kin}
+	\end{align*}
 
 \subsubsection{Kraftstoss}
 
 	$\int\limits^{t_2}_{t_1} p(t) dt = p(t_2) - p(t_1) = \int\limits^{t_2}_{t_1} F(t) dt$
 
-
-\subsection{Dichte}
-
-	Volumen $V$ mal Dichte $\varrho$
-	 
-	$m = \varrho V$
 
 \section{Hydrostatik}
 	\begin{tabu} {l X l}
@@ -357,34 +425,124 @@ Impulserhaltung: In einem geschlossenen System ohne externe einflüsse ist der I
 		Druck
 		&	$p = \frac{F}{A} = \left[ Pa \right] = \left[ \frac{N}{m^2} \right] = \left[ \frac{J}{m^3} \right] = \left[ \frac{kg}{m \cdot s^2} \right]$
 		&	Pascal \\
-		& $1 \text{ bar } = 10^5 Pa$
+		& $1 \text{ bar } = 10^5 Pa$ &
 		\\ \hline
+		Hydrostatischer Druck
+		& $p = \rho g h$ & \\ \hline
+		Dichte
+		& $\rho = \frac{m}{V}$ &\\ \hline
+		Kraft
+		& $F = \frac{p}{A}$ & \\ \hline
+		Fläche
+		& $A = \left[ m^2 \right]$ & \\ \hline
+		Masse & $m = \rho V = \rho A \Delta h = \left[ kg \right]$
 	\end{tabu}
 
 	\hfill \\
 	In der Hydrostatik geht es um die Beschreibung von Fluiden, d.h. Flüssigkeiten und Gasen.
 
-\subsection{Besondere Einheiten} %TODO: Besserer Titel?
-	\begin{tabu} {l X r}
-		Kraft & $F = \frac{p}{A}$ & $A =$ Area\\
-	%	Energie & $	W = \frac{1}{2} k x^2$ & \\
-		Hydrostatischer Druck & $p = \varrho g h$ & \\
-		Masse & $m = \varrho V = \varrho A \Delta h$
-	\end{tabu}
+
+\subsection{Druck}
+\subsubsection{Beispiel Schweredruck}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/hydrostatik}
+		
+		\begin{align*}
+			F_1 &= p A_1\\
+			F_2 &= p A_2\\
+			\frac{F_1}{A_1} = \frac{F_2}{A_2} &\Rightarrow F_2 = \frac{A_2 F_1}{A_1}
+		\end{align*}	
+	\end{multicols}
+
+\subsection{Beispiel Hydrostatischer Druck}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/hydrostatischer_druck}
+		
+		\begin{align*}
+		dp &= \rho \cdot g \cdot dh\\
+		F_2 &= p A_2\\
+		\frac{F_1}{A_1} = \frac{F_2}{A_2} &\Rightarrow F_2 = \frac{A_2 F_1}{A_1}
+		\end{align*}	
+	\end{multicols}
+
+
+\subsection{Statischer Auftrieb}
+	Das Gewicht des verdrängten Fluids geht verloren. Auftrieb: $F_A = \rho_f g V$
+	
+\subsubsection{Beispiel: Benötigte Seilkraft}
+	\begin{multicols}{2}
+		\includegraphics[width=\linewidth]{img/statischer_auftrieb.jpg}
+		
+		\begin{align*}
+			F_s= mg - \rho_f V g = (\rho - \rho_f) V g
+		\end{align*}
+		
+		Wenn die Dichte des Körpers kleiner als des Fluids ist, wird die Kraft negativ (Auftrieb)
+	\end{multicols}
+
+
+\subsection{Strömungen und Luftwiderstand}
+\subsubsection{Kontinuitätsgleichung (Masenerhaltung)}
+	\begin{multicols}{2}
+		$u = v = $ Strömungsgeschwindigkeit \\
+		Der Massenfluss einer Strömung ist erhalten. Somit gilt: \hfill \\
+		$\dot{m} = \rho_1 v_1 A_1 = \rho_2 v_2 A_2 =  \left[ \frac{kg}{s} \right]$ \\
+		Wenn die Dichte konstant ist, ist der Volumenstrom auch erhalten: \hfill \\
+		$\dot{V} = v_1 A_1 = v_2 A_2$
+		
+		\includegraphics[width=0.9\linewidth]{img/kontinuitaetsgleichung}
+	\end{multicols}
+	
+	\paragraph{Spezialfall: Inkompressibel} $\rho_1 = \rho_2$, Volumenstrom $V_1 A_1 = V_2 A_2$ mit $VA = \left[ m^2/s \right]$
+
+
+\subsubsection{Energieerhaltung - Bernoulli}
+	Der Totaldruck ist entlang einer Stromlinie erhalten:
+	
+	\begin{align*}
+		p_1 + \frac{\rho}{2} v_1^2 + \rho g h_1 &= p_2 + \frac{\rho}{2} v_2^2 + \rho g h_2
+	\end{align*}
+	
+	\paragraph{Typisches Beispiel} \hfill \\
+	\begin{multicols}{2}[]
+		\includegraphics[width=\linewidth]{img/bernoulli}
+		
+		\begin{align*}
+			V &= \sqrt{\frac{2a^2 \Delta p}{\rho (A^2 - a^2)}} = \sqrt{\frac{2 a^2 \rho_w g h}{\rho (A^2 - a^2)}}
+		\end{align*}
+	\end{multicols}
+
+
+\subsubsection{Gesetz von Torricelli}
+	\[
+		v = \sqrt{2gh}
+	\]
+	Spezialfall der Bernoulli-Gleichung: Auslaufen aus einem Gefäss. $h$ ist der Fluidhöhe ab Auslauf, $v$ die Ausflussgeschwindigkeit.
+	
+
+\subsubsection{Turbulenzen - Reynolds-Zahl}
+	Die Reynolds-Zahl besangt, wann eine Strömung nicht mehr laminar ($<2400$) sondern turbulent ($>2400$) wird.
+	
+	\[
+		Re = \frac{\rho v D}{\mu}
+	\]
+
+	\begin{description}
+		\item[$\rho$] Dichte
+		\item[v] Geschwindigkeit
+		\item[D] Durchmesser
+		\item[$\mu$] Dynamische Viskosität (Einheit: $Pa \cdot s = \frac{kg}{m \cdot s}$)
+	\end{description}
+
+%DONE until here (until and with Page 12)
 
 
 
-\subsection{Schweredruck}
 
 
-$p_h = \rho g h$
 
 
-Statischer Auftrieb: Das gewicht des verdrängten Fluids geht verloren.
 
-$F_A = \rho_f g V$
-
-\subsection{Strömungen}
 
 Avogadro Konstante: $N_A \approx 6.022 \cdot 10^23 Teilchen$
 
@@ -398,146 +556,125 @@ Dichte eines Fuluidelements: $\varrho = \frac{NM}{V}$ mit
 \end{description}
 
 \subsubsection{Mittlere Geschwindigkeit mehrerer Teilchen}
-
-Mittlere Geschindigkeit über den Impuls ($m\overline{v} = \overline{p}$)
-
+Mittlere Geschindigkeit über den Impuls ($m\vec{v} = \vec{p}$)
 %TODO: Slide 4 Fluiddynamik
 
-\subsubsection{Kontinuitätsgleichung (Masenerhaltung)}
 
-%TODO: Bild von Slide 6
-
-$u = v = $ Strömungsgeschwindigkeit 
-
-$\varrho_1 v_1 A_1 = \varrho_2 v_2 A_2$
-
-Massenstrom $\dot{m} = \left[ \frac{kg}{s} \right]$
-
-\paragraph{Spezialfall: Inkompressibel} $\rho_1 = \rho_2$, Volumenstrom $V_1 A_1 = V_2 A_2$ mit $VA = \left[ m^2/s \right]$
-
-
-\subsubsection{Gesetz von Torricelli}
-
-$v = \sqrt{2gh}$
-
-Dies ist ein Spezialfall der Bernoulligleichung.
-
-\subsubsection{Reynolds-Zahl}
-
-Die Reynolds-Zahl besangt, wann eine Strömung nicht mehr laminar sondern turbulent wird
-
-\[
-	Re = 2320 = \frac{\varrho lu}{\eta} = \frac{lu}{v}
-\]
-
-\begin{description}
-\item[$\varrho$] dichte
-\item[u] Geschwindigkeit
-\item[l] Dimension/Grösse des Systems
-\item[$\eta$] Dynamische Viskosität (Einheit: $Pa \cdot s = \frac{kg}{m \cdot s}$)
-\end{description}
 
 
 \subsubsection{Strömungswiderstand}
-
-Bernoulli sagt, dass $p + \frac{\rho}{2} u^2 =$ konst. ist, d.h. es gäbe in einer Leitung keinen Widerstand.
-
-Dies stimmt nicht bei realen Fluiden: In der Mitte strömt es schneller, da das Rohr konstant $u=0$ ist, gibt es Reibung (also mechanische Energie => wärme)
+	Bernoulli sagt, dass $p + \frac{\rho}{2} u^2 =$ konst. ist, d.h. es gäbe in einer Leitung keinen Widerstand.
+	
+	Dies stimmt nicht bei realen Fluiden: In der Mitte strömt es schneller, da das Rohr konstant $u=0$ ist, gibt es Reibung (also mechanische Energie => wärme)
 
 
 \subsubsection{Gesetz von Blasius}
-
-Wie hoch ist der Druckabfall im Rohr?
-
-\begin{description}
-	\item[$\bar{u}$] ist die gemittelte Geschwindigkeit
-	\item[$l$] ist die Länge
-	\item[$d$] ist der Durchmesser
-	\item[$\lambda = \lambda(Re)$] ist eine Reibungszahl %Das ist eigentlich parametrisierte Ignoranz, was wir hier haben.
-\end{description}
-
-\[
-	\Delta p = \lambda \frac{l}{d}\frac{\rho \bar{u}^2}{2}
-\]
-
-
-
-
+	Wie hoch ist der Druckabfall im Rohr?
+	
+	\begin{description}
+		\item[$\bar{u}$] ist die gemittelte Geschwindigkeit
+		\item[$l$] ist die Länge
+		\item[$d$] ist der Durchmesser
+		\item[$\lambda = \lambda(Re)$] ist eine Reibungszahl %Das ist eigentlich parametrisierte Ignoranz, was wir hier haben.
+	\end{description}
+	
+	\[
+		\Delta p = \lambda \frac{l}{d}\frac{\rho \bar{u}^2}{2}
+	\]
 
 
 \paragraph{Druckwiderstand (Luftwiederstand)} einer Kugel ($C_w \approx 0-5$)
-
-\[
-	F_D = C_w \frac{\varrho}{2} u^2 A
-\]
-Bei einem Luftstrom gibt es vor einem Körper einen Staudruck und nach dem Körper einen Unterdruck.
-
-
-$C_w$ ist ein Mass eines Luftwiderstandes eines Körpers.
+	\[
+		F_D = C_w \frac{\varrho}{2} u^2 A
+	\]
+	Bei einem Luftstrom gibt es vor einem Körper einen Staudruck und nach dem Körper einen Unterdruck.
+	
+	
+	$C_w$ ist ein Mass eines Luftwiderstandes eines Körpers.
 
 
 \subsubsection{Dimensionsanalyse: Rohrströmung}
-\paragraph{Variablen}
-\begin{description}
+	\paragraph{Variablen}
+	\begin{description}
+		\item[$\Delta p$] Druckunterschied
+		\item[$l$] Länge
+		\item[$d$] Durchmesser
+		\item[$\varrho$] Dichte
+		\item[$\eta$] Viskosität
+		\item[$u$] Geschwindigkeit
+	\end{description}
 	
-\item[$\Delta p$] Druckunterschied
-\item[$l$] Länge
-\item[$d$] Durchmesser
-\item[$\varrho$] Dichte
-\item[$\eta$] Viskosität
-\item[$u$] Geschwindigkeit
-\end{description}
-
-\paragraph{Dimensionen}
-\begin{description}
-	\item[$L$] Länge
-	\item[$M$] Masse
-	\item[$T$] Zeit
-\end{description}
-
-Wir wollen $\Delta p = F(l, d, \varrho, \eta, u)$
-
-
-$\Pi$-Theorem: Es gibt $M-N$ unabhängige dimensionslose Grössen. in diesem Fall: $M-N = 6-3 = 3$
-
-\begin{align*}
-\Pi_1 &= \frac{\Delta p}{\varrho u^2} \\
-\Pi_2 &= \frac{l}{d} \\
-\Pi_3 &= \frac{\varrho u d}{\mu} = Re
-\end{align*}
-
-$\Rightarrow \Pi_1 = G(\Pi_2, \Pi_3)$
-
-Unter der Annahme, dass der Druckabfall proportional zur Länge ist:
-
-\[
-	\Pi_1 = \tilde{G}(\Pi_3)\Pi_2
-\]
-
-%TODO: Schwarze formel unten rechts auf Slide 33
-%TODO: Ist das vorhergehende überhaupt relevant???
+	\paragraph{Dimensionen}
+	\begin{description}
+		\item[$L$] Länge
+		\item[$M$] Masse
+		\item[$T$] Zeit
+	\end{description}
+	
+	Wir wollen $\Delta p = F(l, d, \varrho, \eta, u)$
+	
+	
+	$\Pi$-Theorem: Es gibt $M-N$ unabhängige dimensionslose Grössen. in diesem Fall: $M-N = 6-3 = 3$
+	
+	\begin{align*}
+	\Pi_1 &= \frac{\Delta p}{\varrho u^2} \\
+	\Pi_2 &= \frac{l}{d} \\
+	\Pi_3 &= \frac{\varrho u d}{\mu} = Re
+	\end{align*}
+	
+	$\Rightarrow \Pi_1 = G(\Pi_2, \Pi_3)$
+	
+	Unter der Annahme, dass der Druckabfall proportional zur Länge ist:
+	
+	\[
+		\Pi_1 = \tilde{G}(\Pi_3)\Pi_2
+	\]
+	
+	%TODO: Schwarze formel unten rechts auf Slide 33
+	%TODO: Ist das vorhergehende überhaupt relevant???
 
 
 \subsubsection{Beispiel: Endgeschwindigkeit eines Fallenden Gegenstandes}
-
-%TODO: Slide 34
+	%TODO: Slide 34
 
 \subsubsection{Beispiel: Flugzeug gleitwinkel}
-
-%TODO: Screnshot slide 39
+	%TODO: Screnshot slide 39
 
 
 \subsubsection{Druckwellen}
-
-Druckwellen können sich nur mit Schallgeschwindigkeit fortbewegen.
-
-Wird z.B. Luft schneller als mit Schallgeschwindigkeit komprimiert, steigt die Temperatur, damit steigt die Schallgeschwindigkeit entsprechend.
-
-Machzahl bei Flugzeugen $M_a = \frac{v}{c_{\text{schallgeschw.}}}$
-
+	Druckwellen können sich nur mit Schallgeschwindigkeit fortbewegen.
+	
+	Wird z.B. Luft schneller als mit Schallgeschwindigkeit komprimiert, steigt die Temperatur, damit steigt die Schallgeschwindigkeit entsprechend.
+	
+	Machzahl bei Flugzeugen $M_a = \frac{v}{c_{\text{schallgeschw.}}}$
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Thermodynamik}
 \subsection{Entropie}
 
 In einem geschlossenen System gelten immer die Hydrodynamischen Gesettze:
