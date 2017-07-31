@@ -459,9 +459,7 @@ Impulserhaltung: In einem geschlossenen System ohne externe Einflüsse ist der I
 		\includegraphics[width=\linewidth]{img/hydrostatischer_druck}
 		
 		\begin{align*}
-		dp &= \rho \cdot g \cdot dh\\
-		F_2 &= p A_2\\
-		\frac{F_1}{A_1} = \frac{F_2}{A_2} &\Rightarrow F_2 = \frac{A_2 F_1}{A_1}
+		dp &= \rho \cdot g \cdot dh
 		\end{align*}	
 	\end{multicols}
 
@@ -471,7 +469,7 @@ Impulserhaltung: In einem geschlossenen System ohne externe Einflüsse ist der I
 	
 \subsubsection{Beispiel: Benötigte Seilkraft}
 	\begin{multicols}{2}
-		\includegraphics[width=\linewidth]{img/statischer_auftrieb.jpg}
+		\includegraphics[width=0.9\linewidth]{img/statischer_auftrieb.jpg}
 		
 		\begin{align*}
 			F_s= mg - \rho_f V g = (\rho - \rho_f) V g
@@ -521,7 +519,7 @@ Impulserhaltung: In einem geschlossenen System ohne externe Einflüsse ist der I
 	
 
 \subsubsection{Turbulenzen - Reynolds-Zahl}
-	Die Reynolds-Zahl besangt, wann eine Strömung nicht mehr laminar ($<2400$) sondern turbulent ($>2400$) wird.
+	Die Reynolds-Zahl besagt, wann eine Strömung nicht mehr laminar ($<2400$) sondern turbulent ($>2400$) wird.
 	
 	\[
 		Re = \frac{\rho v D}{\mu}
@@ -529,17 +527,75 @@ Impulserhaltung: In einem geschlossenen System ohne externe Einflüsse ist der I
 
 	\begin{description}
 		\item[$\rho$] Dichte
-		\item[v] Geschwindigkeit
-		\item[D] Durchmesser
+		\item[$v$] Geschwindigkeit
+		\item[$D$] Durchmesser
 		\item[$\mu$] Dynamische Viskosität (Einheit: $Pa \cdot s = \frac{kg}{m \cdot s}$)
 	\end{description}
 
-%DONE until here (until and with Page 12)
+\subsubsection{Reibungszahl}
+
+Die Reibungszahl kann wie folgt angenähert werden:
+
+\begin{align*}
+	\lambda(Re) = \left\{
+		\begin{array{lr}
+			64/Re & \text{laminar}\\
+			0.316/Re^{\frac{1}{4}} & \text{turbulent}
+		\end{array}
+	\right.
+\end{align*}
+
+bzw. aus einem Moody Diagram ausgelesen werden:
+
+\includegraphics[width=\linewidth]{img/moody_diagram}
+
+\subsection{Rohrströmung}
+\subsubsection{Gesetz von Blasius - Druckabfall im Rohr}
+	Wie hoch ist der Druckabfall im Rohr?
+	
+	\begin{description}
+		\item[$\bar{v}$] ist die gemittelte Geschwindigkeit
+		\item[$l$] ist die Länge
+		\item[$D$] ist der Durchmesser
+		\item[$\lambda(Re)$] ist eine Reibungszahl %Das ist eigentlich parametrisierte Ignoranz, was wir hier haben.
+	\end{description}
+	
+	\[
+	\Delta p = \lambda(Re) \frac{\rho \bar{v}^2}{2}\frac{l}{D}
+	\]
+
+\subsubsection{Beispiel: Endgeschwindigkeit eines Fallenden Gegenstandes}
+%TODO: Slide 34
+
+\subsubsection{Beispiel: Flugzeug Gleitwinkel}
+%TODO: Screnshot slide 39
+
+\subsection{Druckwiderstand (Luftwiederstand)}
+	Von einer Kugel ($C_w \approx 0-5$)
+	\[
+		F_D = C_w \frac{\varrho}{2} u^2 A
+	\]
+	Bei einem Luftstrom gibt es vor einem Körper einen Staudruck und nach dem Körper einen Unterdruck.
+	
+	
+	$C_w$ ist ein Mass eines Luftwiderstandes eines Körpers.
+
+
+
+\subsubsection{Druckwellen}
+	Druckwellen können sich nur mit Schallgeschwindigkeit fortbewegen.
+	
+	Wird z.B. Luft schneller als mit Schallgeschwindigkeit komprimiert, steigt die Temperatur, damit steigt die Schallgeschwindigkeit entsprechend.
+	
+	Machzahl bei Flugzeugen $M_a = \frac{v}{c_{\text{schallgeschw.}}}$
 
 
 
 
+\subsubsection{Strömungswiderstand}
+Bernoulli sagt, dass $p + \frac{\rho}{2} u^2 =$ konst. ist, d.h. es gäbe in einer Leitung keinen Widerstand.
 
+Dies stimmt nicht bei realen Fluiden: In der Mitte strömt es schneller, da das Rohr konstant $u=0$ ist, gibt es Reibung (also mechanische Energie => wärme)
 
 
 
@@ -558,98 +614,6 @@ Dichte eines Fuluidelements: $\varrho = \frac{NM}{V}$ mit
 \subsubsection{Mittlere Geschwindigkeit mehrerer Teilchen}
 Mittlere Geschindigkeit über den Impuls ($m\vec{v} = \vec{p}$)
 %TODO: Slide 4 Fluiddynamik
-
-
-
-
-\subsubsection{Strömungswiderstand}
-	Bernoulli sagt, dass $p + \frac{\rho}{2} u^2 =$ konst. ist, d.h. es gäbe in einer Leitung keinen Widerstand.
-	
-	Dies stimmt nicht bei realen Fluiden: In der Mitte strömt es schneller, da das Rohr konstant $u=0$ ist, gibt es Reibung (also mechanische Energie => wärme)
-
-
-\subsubsection{Gesetz von Blasius}
-	Wie hoch ist der Druckabfall im Rohr?
-	
-	\begin{description}
-		\item[$\bar{u}$] ist die gemittelte Geschwindigkeit
-		\item[$l$] ist die Länge
-		\item[$d$] ist der Durchmesser
-		\item[$\lambda = \lambda(Re)$] ist eine Reibungszahl %Das ist eigentlich parametrisierte Ignoranz, was wir hier haben.
-	\end{description}
-	
-	\[
-		\Delta p = \lambda \frac{l}{d}\frac{\rho \bar{u}^2}{2}
-	\]
-
-
-\paragraph{Druckwiderstand (Luftwiederstand)} einer Kugel ($C_w \approx 0-5$)
-	\[
-		F_D = C_w \frac{\varrho}{2} u^2 A
-	\]
-	Bei einem Luftstrom gibt es vor einem Körper einen Staudruck und nach dem Körper einen Unterdruck.
-	
-	
-	$C_w$ ist ein Mass eines Luftwiderstandes eines Körpers.
-
-
-\subsubsection{Dimensionsanalyse: Rohrströmung}
-	\paragraph{Variablen}
-	\begin{description}
-		\item[$\Delta p$] Druckunterschied
-		\item[$l$] Länge
-		\item[$d$] Durchmesser
-		\item[$\varrho$] Dichte
-		\item[$\eta$] Viskosität
-		\item[$u$] Geschwindigkeit
-	\end{description}
-	
-	\paragraph{Dimensionen}
-	\begin{description}
-		\item[$L$] Länge
-		\item[$M$] Masse
-		\item[$T$] Zeit
-	\end{description}
-	
-	Wir wollen $\Delta p = F(l, d, \varrho, \eta, u)$
-	
-	
-	$\Pi$-Theorem: Es gibt $M-N$ unabhängige dimensionslose Grössen. in diesem Fall: $M-N = 6-3 = 3$
-	
-	\begin{align*}
-	\Pi_1 &= \frac{\Delta p}{\varrho u^2} \\
-	\Pi_2 &= \frac{l}{d} \\
-	\Pi_3 &= \frac{\varrho u d}{\mu} = Re
-	\end{align*}
-	
-	$\Rightarrow \Pi_1 = G(\Pi_2, \Pi_3)$
-	
-	Unter der Annahme, dass der Druckabfall proportional zur Länge ist:
-	
-	\[
-		\Pi_1 = \tilde{G}(\Pi_3)\Pi_2
-	\]
-	
-	%TODO: Schwarze formel unten rechts auf Slide 33
-	%TODO: Ist das vorhergehende überhaupt relevant???
-
-
-\subsubsection{Beispiel: Endgeschwindigkeit eines Fallenden Gegenstandes}
-	%TODO: Slide 34
-
-\subsubsection{Beispiel: Flugzeug gleitwinkel}
-	%TODO: Screnshot slide 39
-
-
-\subsubsection{Druckwellen}
-	Druckwellen können sich nur mit Schallgeschwindigkeit fortbewegen.
-	
-	Wird z.B. Luft schneller als mit Schallgeschwindigkeit komprimiert, steigt die Temperatur, damit steigt die Schallgeschwindigkeit entsprechend.
-	
-	Machzahl bei Flugzeugen $M_a = \frac{v}{c_{\text{schallgeschw.}}}$
-
-
-
 
 
 
